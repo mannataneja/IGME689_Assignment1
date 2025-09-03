@@ -8,6 +8,7 @@ public class UpdateLocation : MonoBehaviour
     public ArcGISCameraComponent arcGISCamera;
     public ArcGISLocationComponent cameraLocationComponent;
 
+    public GameObject cube;
     private void Awake()
     {
         //arcGISMap = GetComponent<ArcGISMapComponent>();
@@ -16,12 +17,14 @@ public class UpdateLocation : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log(cameraLocationComponent.Position.X);
+/*        Debug.Log(cameraLocationComponent.Position.X);
         Debug.Log(cameraLocationComponent.Position.Y);
         Debug.Log(arcGISMap.OriginPosition.X);
-        Debug.Log(arcGISMap.OriginPosition.Y);
+        Debug.Log(arcGISMap.OriginPosition.Y);*/
 
-        //Invoke(nameof(MoveToBoston), 5);
+        ArcGISPoint loc = new ArcGISPoint(cube.transform.position.x, cube.transform.position.y, cube.transform.position.z, new ArcGISSpatialReference(4326));
+        Debug.Log(loc.X);
+        
     }
 
     void MoveCamera()
@@ -44,8 +47,8 @@ public class UpdateLocation : MonoBehaviour
     }
     public void MoveToNewYork()
     {
-        arcGISMap.OriginPosition = new ArcGISPoint(-74.10572, 40.71209, arcGISMap.OriginPosition.Z, ArcGISSpatialReference.WGS84());
-        cameraLocationComponent.Position = new ArcGISPoint(-74.10572, 40.71209, cameraLocationComponent.Position.Z, ArcGISSpatialReference.WGS84());
+        arcGISMap.OriginPosition = new ArcGISPoint(-74.06, 40.7128, arcGISMap.OriginPosition.Z, ArcGISSpatialReference.WGS84());
+        cameraLocationComponent.Position = new ArcGISPoint(-74.06, 40.7128, cameraLocationComponent.Position.Z, ArcGISSpatialReference.WGS84());
 
     }
 }
