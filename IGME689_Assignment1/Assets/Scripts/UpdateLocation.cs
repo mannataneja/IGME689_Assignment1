@@ -8,7 +8,6 @@ public class UpdateLocation : MonoBehaviour
     public ArcGISCameraComponent arcGISCamera;
     public ArcGISLocationComponent cameraLocationComponent;
 
-    public GameObject cube;
     private void Awake()
     {
         //arcGISMap = GetComponent<ArcGISMapComponent>();
@@ -21,9 +20,6 @@ public class UpdateLocation : MonoBehaviour
         Debug.Log(cameraLocationComponent.Position.Y);
         Debug.Log(arcGISMap.OriginPosition.X);
         Debug.Log(arcGISMap.OriginPosition.Y);*/
-
-        ArcGISPoint loc = new ArcGISPoint(cube.transform.position.x, cube.transform.position.y, cube.transform.position.z, new ArcGISSpatialReference(4326));
-        Debug.Log(loc.X);
         
     }
 
