@@ -6,34 +6,30 @@ public class UpdateLocation : MonoBehaviour
 {
     private ArcGISCameraComponent arcGISCamera;
     private ArcGISMapComponent arcGISMap;
-    private ArcGISLocationComponent locationComponent;
+    private ArcGISLocationComponent cameraLocationComponent;
 
     private void Awake()
     {
         arcGISMap = GetComponent<ArcGISMapComponent>();
         arcGISCamera = arcGISMap.GetComponentInChildren<ArcGISCameraComponent>();
-        locationComponent = arcGISCamera.GetComponent<ArcGISLocationComponent>();
+        cameraLocationComponent = arcGISCamera.GetComponent<ArcGISLocationComponent>();
     }
     void Start()
     {
-        Debug.Log(locationComponent.Position.X);
-        Debug.Log(locationComponent.Position.Y);
-        Invoke(nameof(MoveToNewLocation), 2);
+        Debug.Log(cameraLocationComponent.Position.X);
+        Debug.Log(cameraLocationComponent.Position.Y);
+        Invoke(nameof(MoveToBoston), 5);
     }
 
     void MoveCamera()
     {
-        locationComponent.Position = new ArcGISPoint(locationComponent.Position.X + 1, locationComponent.Position.Y + 3, locationComponent.Position.Z, ArcGISSpatialReference.WGS84());
-        Debug.Log(locationComponent.Position.X);
-        Debug.Log(locationComponent.Position.Y);
+        cameraLocationComponent.Position = new ArcGISPoint(cameraLocationComponent.Position.X + 1, cameraLocationComponent.Position.Y + 3, cameraLocationComponent.Position.Z, ArcGISSpatialReference.WGS84());
+        Debug.Log(cameraLocationComponent.Position.X);
+        Debug.Log(cameraLocationComponent.Position.Y);
     }
-    void MoveToNewLocation()
+    void MoveToBoston()
     {
-        Debug.Log("Move");
-        Debug.Log(arcGISMap.OriginPosition);
-        arcGISMap.OriginPosition = new ArcGISPoint(-75, 40.7128);
-        Debug.Log("Moved");
-        Debug.Log(arcGISMap.OriginPosition);
+        cameraLocationComponent.Position = new ArcGISPoint(-71.0565, 42.3555, cameraLocationComponent.Position.Z, ArcGISSpatialReference.WGS84());
 
     }
 }

@@ -853,7 +853,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162813151}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5858f0d37145ed4d9b65e4571a42e1a, type: 3}
   m_Name: 
@@ -950,9 +950,31 @@ MonoBehaviour:
       IsEnabled: 0
       Polygons: []
       Type: 0
+  - Name: Boston
+    Type: 9
+    Source: https://tiles.arcgis.com/tiles/z2tnIkrLQ2BRzr6P/arcgis/rest/services/Boston__Integrated_Mesh_3D_Tiles_WGS84/3DTilesServer/tileset.json
+    Opacity: 1
+    IsVisible: 1
+    Authentication:
+      ConfigurationIndex: 0
+    AuthenticationType: 0
+    BuildingSceneLayerFilter:
+      ActiveBuildingAttributeFilterIndex: 0
+      BuildingAttributeFilters: []
+      IsBuildingAttributeFilterEnabled: 0
+      IsBuildingDisciplinesCategoriesFilterEnabled: 0
+      EnabledCategories: 
+      EnabledDisciplines: 
+    MeshModifications:
+      IsEnabled: 0
+      MeshModifications: []
+    SpatialFeatureFilter:
+      IsEnabled: 0
+      Polygons: []
+      Type: 0
   originPosition:
-    X: -74.06
-    Y: 40.7128
+    X: -74.10572
+    Y: 40.71209
     Z: 0
     SRWkid: 4326
     SpatialReference:
@@ -988,9 +1010,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LocalPosition:
-    x: -8244321.488149841
+    x: -8249411.01526891
     y: 0
-    z: 4970071.579142429
+    z: 4969967.307899827
   m_LocalRotation:
     value:
       x: 0
@@ -1045,8 +1067,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255950665}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.49565956, y: 0.14363948, z: -0.08351712, w: 0.85247535}
-  m_LocalPosition: {x: 0, y: 497, z: 0}
+  m_LocalRotation: {x: 0.49565944, y: 0.14363948, z: -0.08351709, w: 0.85247546}
+  m_LocalPosition: {x: 5089.5273, y: 497, z: 104.27124}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1329,15 +1351,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsInitialized: 1
   m_LocalPosition:
-    x: -8244321.488149841
+    x: -8244321.488149843
     y: 497
     z: 4970071.579142429
   m_LocalRotation:
     value:
-      x: 0.49565953
-      y: 0.14363948
-      z: -0.08351711
-      w: 0.8524753
+      x: 0.49565947
+      y: 0.14363946
+      z: -0.08351708
+      w: 0.8524754
   m_LocalScale:
     x: 1
     y: 1
@@ -1436,7 +1458,7 @@ Transform:
   m_GameObject: {fileID: 1349941576}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456965, z: 0.10938162, w: 0.8754261}
-  m_LocalPosition: {x: -5089.5273, y: 3, z: -103.60007}
+  m_LocalPosition: {x: 0, y: 3, z: 0.6711731}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
