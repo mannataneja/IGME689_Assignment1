@@ -5,22 +5,32 @@ public class LightingManager : MonoBehaviour
 {
     [SerializeField] private Light DirectionalLight;
     [SerializeField] private LightingPreset Preset;
-    [SerializeField, Range(0, 24)] private float TimeOfDay;
+
+    [Header("Use actual time of day or simulated time")]
+    [SerializeField] bool useActualTime;
+    [SerializeField, Range(0, 24)] private float SimulatedTimeOfDay;
 
     void Update()
     {
         if(Preset == null) return;
 
-        if(Application.isPlaying)
+        if (!useActualTime)
         {
-            TimeOfDay += Time.deltaTime;
-            TimeOfDay %= 24;
-            UpdateLighting(TimeOfDay / 24f);
+            if (Application.isPlaying)
+            {
+                SimulatedTimeOfDay += Time.deltaTime;
+                SimulatedTimeOfDay %= 24;
+                UpdateLighting(SimulatedTimeOfDay / 24f);
+            }
+            else
+            {
+                UpdateLighting(SimulatedTimeOfDay / 24f);
+
+            }
         }
         else
         {
-            UpdateLighting(TimeOfDay / 24f);
-
+            UpdateLighting(System.DateTime.Now.Hour / 24f);
         }
     }
 

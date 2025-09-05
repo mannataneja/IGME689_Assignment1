@@ -8,6 +8,7 @@ public class UpdateLocation : MonoBehaviour
     public ArcGISCameraComponent arcGISCamera;
     public ArcGISLocationComponent cameraLocationComponent;
 
+    public GameObject object_3D;
     private void Awake()
     {
         //arcGISMap = GetComponent<ArcGISMapComponent>();
@@ -16,11 +17,14 @@ public class UpdateLocation : MonoBehaviour
     }
     void Start()
     {
-/*        Debug.Log(cameraLocationComponent.Position.X);
-        Debug.Log(cameraLocationComponent.Position.Y);
-        Debug.Log(arcGISMap.OriginPosition.X);
-        Debug.Log(arcGISMap.OriginPosition.Y);*/
-        
+        /*        Debug.Log(cameraLocationComponent.Position.X);
+                Debug.Log(cameraLocationComponent.Position.Y);
+                Debug.Log(arcGISMap.OriginPosition.X);
+                Debug.Log(arcGISMap.OriginPosition.Y);*/
+
+        Debug.Log("Game engine coordinates of 3D Object: " + object_3D.transform.position.x + ", " + object_3D.transform.position.y + ", " + object_3D.transform.position.z);
+        ArcGISPoint loc = new ArcGISPoint(object_3D.transform.position.x, object_3D.transform.position.z);
+        Debug.Log(loc.X + ", " + loc.Y);
     }
 
     void MoveCamera()
